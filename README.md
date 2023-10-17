@@ -1,5 +1,37 @@
 # UniFametro Conteúdos
 
+## JAVASCRIPT
+
+### Exemplo A
+
+```javascript
+<script type="module">
+    const nameInput = "name";
+    const nameLengthOutput = "name-length-output";
+
+    nameInput.addEventListener("input", e => {
+        nameLengthOutput = nameInput;
+    });
+</script>
+```
+
+### Exemplo B
+
+```javascript
+<label>Name: <input id="name-input"></label><br>
+Length: <output id="name-length-output" for="name-input">0<output>
+
+<script type="module">
+    const nameInput = document.getElementById("name-input");
+    const nameLengthOutput = document.getElementById("name-length-output");
+
+    nameInput.addEventListener("input", e => {
+        nameLengthOutput.textContent = nameInput.value.length;
+    });
+</script>
+```
+
+
 
 ## JAVA
 
