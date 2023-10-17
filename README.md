@@ -31,8 +31,6 @@ Length: <output id="name-length-output" for="name-input">0<output>
 </script>
 ```
 
-
-
 ## JAVA
 
 ### Exemplo A
@@ -65,5 +63,56 @@ public static void main(String args[]){
       GlobalClass.globalVariable = "newglobalValue";
       System.out.println("globalVariable:"+GlobalClass.globalVariable);
 
+}
+```
+
+## Csharp (.net)
+
+### Exemplo A
+
+```csharp
+using System;
+
+
+namespace ErrorTest
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string a = "Mensagem";
+            Console.WriteLime("Sua mensagem foi:" + a);
+        }
+    }
+}
+```
+
+### Exemplo B
+
+```csharp
+using System;
+
+
+namespace ErrorTest
+{
+    class Program
+    {
+        static void Input(ref string a)
+        {
+            Console.Write("Por favor insira algo:");
+            a = Console.ReadLine();
+        }
+        static void Output(string a)
+        {
+            Console.WriteLine("Digite algo: {0}", a);
+        }
+
+        static void Main(string[] args)
+        {
+            string a;
+            Input(ref a);
+            Output(a);
+        }
+    }
 }
 ```
