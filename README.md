@@ -156,11 +156,26 @@ box.width = 10 # AttributeError: can't set attribute
 ### Exemplo A
 
 ```golang
+func RetornaUmaPersonalidade(w http.ResponseWriter, r *http.Request) {
+    id := 10
 
+    for _, personalidade := range models.Personalidades {
+        if strconv.Itoa(personalidade.Id) == id {
+            json.NewEncoder(w).Encode(personalidade)
+        }
+    }
 ```
 
 ### Exemplo B
 
 ```golang
+func RetornaUmaPersonalidade(w http.ResponseWriter, r *http.Request) {
+    vars := mux.Vars(r)
+    id := vars["id"]
 
+    for _, personalidade := range models.Personalidades {
+        if strconv.Itoa(personalidade.Id) == id {
+            json.NewEncoder(w).Encode(personalidade)
+        }
+    }
 ```
