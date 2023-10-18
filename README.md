@@ -116,3 +116,51 @@ namespace ErrorTest
     }
 }
 ```
+
+## Python
+
+### Exemplo A
+
+```python
+class Box:
+    width = 100
+    height = 200
+    weight = 80
+
+print(Box.width) # 100
+
+# Você poderia usar instâncias para atualizar atributos em instâncias separadas
+box = Box()
+print(box.width) # 100
+box.width = 10
+print(box.width) # 10
+
+# Mas seus valores originais ainda serão salvos nos atributos da classe
+print(Box.width) # 100
+
+```
+
+### Exemplo B
+
+```python
+Box = namedtuple('Box', ('width', 'height', 'weight'))
+box = Box(100, 200, 80)
+print(box.width) # 100
+
+# Tuplas são imutáveis, então esta é mais uma forma de agrupar constantes
+box.width = 10 # AttributeError: can't set attribute
+```
+
+## Golang
+
+### Exemplo A
+
+```golang
+
+```
+
+### Exemplo B
+
+```golang
+
+```
