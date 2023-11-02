@@ -1,179 +1,305 @@
+# O que é uma estrutura de dados?
+
+
+ Uma estrutura de dados é um formato de armazenamento em computação usado para organizar, processar e recuperar dados.
+ As estruturas de dados são frequentemente aplicadas na engenharia de software para simplificar e otimizar algoritmos, bem como direcionar a forma como os programas de software são executados.
+
 ## JAVASCRIPT
 
-### Exemplo A
+*Estruturas de dados comuns*
+
+- Stack
+- Queue
+- Linked List
+- Set
+- Hash Table
+- Tree
+- Trie
+- Graph
+
+
+*Métodos comuns de pilha*
+
+- push: Insira um novo elemento.
+- pop: Remova o elemento superior, retorne o elemento removido.
+- peek: Retorna o elemento superior.
+- length: retorna o número de elementos na pilha.
+
+*Métodos de Fila*
+
+- enqueue: Entre na fila, adicione um elemento no final.
+- dequeue: Sai da fila, remove o elemento frontal e devolve-o.
+- front: Obtenha o primeiro elemento.
+- isEmpty: determine se a fila está vazia.
+- size: Obtenha o número de elementos na fila.
+
+*Métodos de lista vinculada unilateral*
+
+- size: retorna o número de nós.
+- head: Retorna o elemento da cabeça.
+- add: Adicione outro nó na cauda.
+- remover: Remove um determinado nó.
+- indexOf: Retorna o índice de um nó.
+- elementAt: Retorna o nó de um índice.
+- addAt: Insere um nó em um índice específico.
+- removeAt: exclui um nó em um índice específico.
+
+*Métodos de conjunto típicos*
+
+- values: retorna todos os elementos de um conjunto.
+- size: retorna o número de elementos.
+- has: Determine se um elemento existe.
+- add: Insere elementos em um conjunto.
+- remover: exclui elementos de um conjunto.
+- união: Retorna a interseção de dois conjuntos.
+- difference: Retorna a diferença de dois conjuntos.
+- subset: determine se um determinado conjunto é um subconjunto de outro conjunto.
+
+*Métodos de tabela hash*
+
+- add: Adicione um par de valores-chave.
+- remover: exclui um par de valores-chave.
+- lookup: Encontre um valor correspondente usando uma chave.
+
+*Conceitos de estrutura de dados em árvore*
+
+- Root: Nó raiz de uma árvore; nenhum nó pai para root
+- Parent node: Nó direto da camada superior; só tem um
+- Child node: Nó(s) direto(s) da camada inferior; pode ter vários
+- Siblings: compartilham o mesmo nó pai
+- Leaf: Nó sem filho
+- Edge: Ramificação ou ligação entre nós
+- Path: as arestas de um nó inicial até o nó de destino
+- Height of Node:: Número de arestas do caminho mais longo de um nó específico até o nó folha
+- Height of Tree: Número de arestas do caminho mais longo do nó raiz até o nó folha
+- Depth of Node: número de arestas do nó raiz ao nó específico
+- Degree of Node: número de nós filhos
+
+*Métodos comuns de árvore de pesquisa binária*
+
+- add: Insere um nó na árvore.
+- findMin: Obtenha o nó mínimo.
+- findMax: Obtenha o nó máximo.
+- find: Pesquise um nó específico.
+- isPresent: Determina a existência de um determinado nó.
+- remover: Exclui um nó da árvore.
+
+*Métodos de tentativa*
+
+- add: Insere uma palavra na árvore do dicionário.
+- isWord: Determine se a árvore consiste em uma determinada palavra.
+- print: Retorna todas as palavras da árvore.
+
+### Exemplo
 
 ```javascript
-<script type="module">
-    const nameInput = "name";
-    const nameLengthOutput = "name-length-output";
+function Stack() {
+this.count = 0;
+  this.storage = {};
 
-    nameInput.addEventListener("input", e => {
-        nameLengthOutput = nameInput;
-    });
-</script>
-```
+  this.push = function (value) {
+    this.storage[this.count] = value;
+    this.count++;
+  }
 
-### Exemplo B
+  this.pop = function () {
+    if (this.count === 0) {
+      return undefined;
+    }
+    this.count--;
+    var result = this.storage[this.count];
+    delete this.storage[this.count];
+    return result;
+  }
 
-```javascript
-<label>Name: <input id="name-input"></label><br>
-Length: <output id="name-length-output" for="name-input">0<output>
+  this.peek = function () {
+    return this.storage[this.count - 1];
+  }
 
-<script type="module">
-    const nameInput = document.getElementById("name-input");
-    const nameLengthOutput = document.getElementById("name-length-output");
-
-    nameInput.addEventListener("input", e => {
-        nameLengthOutput.textContent = nameInput.value.length;
-    });
-</script>
+  this.size = function () {
+    return this.count;
+  }
+}
 ```
 
 ## JAVA
 
-### Exemplo A
+*Estruturas de dados lineares*
+
+- Arrays: Um array é uma estrutura de dados linear que representa um grupo de elementos semelhantes, acessados ​​por índice. O tamanho de uma matriz deve ser fornecido antes de armazenar os dados.
+- Linked List: Uma lista vinculada é uma estrutura de dados linear com a coleção de vários nós, onde cada elemento armazena seus próprios dados e um ponteiro para a localização do próximo elemento.
+- Stacks: Stack, uma estrutura de dados abstrata, é uma coleção de objetos que são inseridos e removidos de acordo com o princípio LIFO (último a entrar, primeiro a sair).
+- Queues: As filas também são outro tipo de estrutura de dados abstrata. Ao contrário de uma pilha, a fila é uma coleção de objetos que são inseridos e removidos de acordo com o princípio FIFO (primeiro a entrar, primeiro a sair).
+
+*Estruturas de dados hierárquicas*
+
+- Binary Trees
+- Heaps
+- Hash Tables
+
+### Exemplo
 
 ```java
-//Main Método
-public static void main(String args[]){
-
-      var variavel = "globalVariable"
-      System.out.println("globalVariable:" + variavel);
-
-      variavel = "newglobalValue";
-      System.out.println("globalVariable:"+ variavel);
-
-}
-```
-
-### Exemplo B
-
-```java
-//Global Class
-public class GlobalClass {
-            public static String globalVariable = "globalValue";
-}
-
-//Main Método
-public static void main(String args[]){
-
-      System.out.println("globalVariable:"+GlobalClass.globalVariable);
-      GlobalClass.globalVariable = "newglobalValue";
-      System.out.println("globalVariable:"+GlobalClass.globalVariable);
-
+package com.dataflair.arrayclass;
+class ExceptionArrayIndex {
+  public static void main(String[] args) {
+    int arr[] = new int[] {1,2,3,4,5};
+    int j;
+    for (j = 0; j <= arr.length; j++) {
+      System.out.println(arr[j]);
+    }
+  }
 }
 ```
 
 ## Csharp (.net)
 
-### Exemplo A
+**Fonte:**
+*https://learn.microsoft.com/en-us/dotnet/standard/collections/*
+
+*Em coleções baseadas em IList ou diretamente em ICollection, cada elemento contém apenas um valor. Esses tipos incluem:*
+
+- Array
+- ArrayList
+- List<T>
+- Queue
+- ConcurrentQueue<T>
+- Stack
+- ConcurrentStack<T>
+- LinkedList<T>
+
+*Em coleções baseadas na interface IDictionary, cada elemento contém uma chave e um valor. Esses tipos incluem:*
+
+
+- Hashtable
+- SortedList
+- SortedList<TKey,TValue>
+- Dictionary<TKey,TValue>
+- ConcurrentDictionary<TKey,TValue>
+
+### Exemplo
 
 ```csharp
 using System;
+using System.Collections;
+public class SamplesStack  {
 
+   public static void Main()  {
 
-namespace ErrorTest
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            string a = "Mensagem";
-            Console.WriteLime("Sua mensagem foi:" + a);
-        }
-    }
+      // Creates and initializes a new Stack.
+      Stack myStack = new Stack();
+      myStack.Push("Hello");
+      myStack.Push("World");
+      myStack.Push("!");
+
+      // Displays the properties and values of the Stack.
+      Console.WriteLine( "myStack" );
+      Console.WriteLine( "\tCount:    {0}", myStack.Count );
+      Console.Write( "\tValues:" );
+      PrintValues( myStack );
+   }
+
+   public static void PrintValues( IEnumerable myCollection )  {
+      foreach ( Object obj in myCollection )
+         Console.Write( "    {0}", obj );
+      Console.WriteLine();
+   }
 }
-```
 
-### Exemplo B
-
-```csharp
-using System;
-
-
-namespace ErrorTest
-{
-    class Program
-    {
-        static void Input(ref string a)
-        {
-            Console.Write("Por favor insira algo:");
-            a = Console.ReadLine();
-        }
-        static void Output(string a)
-        {
-            Console.WriteLine("Digite algo: {0}", a);
-        }
-
-        static void Main(string[] args)
-        {
-            string a;
-            Input(ref a);
-            Output(a);
-        }
-    }
-}
+/*
+Este código produz a seguinte saída.
+minha pilha
+Contagem: 3
+Valores: ! Olá mundo
+*/
 ```
 
 ## Python
 
-### Exemplo A
+**Fonte:**
+*https://docs.python.org/3/tutorial/datastructures.html*
+
+*Estruturas de dados comuns*
+
+- Stack
+- Queue
+- Linked List
+- Hash Table
+- Tree
+- Tries
+- Graphs
+- Heaps
+
+
+### Exemplo
 
 ```python
-class Box:
-    width = 100
-    height = 200
-    weight = 80
+my_tuple = ('sara', 6, 5, 0.97)
+my_list = ['sara', 6, 5, 0.97]
+print(my_tuple[0])     #saída => 'sara'
+print(my_list[0])      #saída => 'sara'
 
-print(Box.width) # 100
-
-# Você poderia usar instâncias para atualizar atributos em instâncias separadas
-box = Box()
-print(box.width) # 100
-box.width = 10
-print(box.width) # 10
-
-# Mas seus valores originais ainda serão salvos nos atributos da classe
-print(Box.width) # 100
-
+my_tuple[0] = 'ansh'   # modificando tupla => gera um erro
+my_list[0] = 'ansh'    # modificando lista => lista modificada
+print(my_tuple[0])     #saída => 'sara'
+print(my_list[0])      #saída => 'ansh'
 ```
 
-### Exemplo B
-
-```python
-Box = namedtuple('Box', ('width', 'height', 'weight'))
-box = Box(100, 200, 80)
-print(box.width) # 100
-
-# Tuplas são imutáveis, então esta é mais uma forma de agrupar constantes
-box.width = 10 # AttributeError: can't set attribute
-```
 
 ## Golang
 
-### Exemplo A
+*As estruturas de dados básicas do Golang incluem:*
+
+- Array
+- Slice
+- Map
+- Struct
+
+### Exemplo
 
 ```golang
-func RetornaUmaPersonalidade(w http.ResponseWriter, r *http.Request) {
-    id := 10
+package main
 
-    for _, personalidade := range models.Personalidades {
-        if strconv.Itoa(personalidade.Id) == id {
-            json.NewEncoder(w).Encode(personalidade)
-        }
-    }
+import "fmt"
+
+func main() {
+
+	s := []int{10, 20, 30, 40}
+
+	// We can loop through this slice in two ways:
+
+	// 1. using "range"
+	for key, value := range s {
+		fmt.Println(key, ":", value)
+	}
+	//If we dont want the key, we do, replace "key" with "_":
+	for _, value := range s {
+		fmt.Println(value)
+	}
+
+	// 2. Using traditional forloop:
+	for i := 0; i < len(s); i++ {
+		fmt.Println(s[i]) //get the value at index "i"
+	}
+}
+
+/*
+Primeira Saída:
+0 : 10
+1 : 20
+2 : 30
+3 : 40
+
+Segunda Saída:
+10
+20
+30
+40
+10
+20
+30
+40
+*/
 ```
-
-### Exemplo B
-
-```golang
-func RetornaUmaPersonalidade(w http.ResponseWriter, r *http.Request) {
-    vars := mux.Vars(r)
-    id := vars["id"]
-
-    for _, personalidade := range models.Personalidades {
-        if strconv.Itoa(personalidade.Id) == id {
-            json.NewEncoder(w).Encode(personalidade)
-        }
-    }
-```
+**IDE Go:**
+*https://go.dev/play/*
